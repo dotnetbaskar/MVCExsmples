@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MVCTraining.Models.Student>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Welcome to Student Page</h2>
+@*@using (Html.BeginForm("Find","Student", FormMethod.Post))
+{*@
+    <table border="1">
+        <tr>
+            <td>Student Id</td>
+            <td>Student Name</td>
+            <td>Age</td>
+            <td></td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m=>item.StudentId)</td>
+                <td>@Html.DisplayFor(modelitem => item.StudentName)</td>
+                <td>@Html.DisplayFor(modelitem => item.Age)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.StudentId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.StudentId })
+                  <button>Click Me</button>
+                </td>
+            </tr>
+        }
+    </table>
+
+@*}*@
